@@ -17,14 +17,13 @@
         <RootNamespace>TooManyCooks</RootNamespace>
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 
         <!-- Display name -->
         <ApplicationTitle>TooManyCooks</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.toomanycooks</ApplicationId>
+        <ApplicationId>com.minnick.toomanycooks</ApplicationId>
 
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -62,6 +61,10 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-rc.2.24473.5"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CustomTask\CustomTask.csproj" />
     </ItemGroup>
 
 </Project>
