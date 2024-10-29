@@ -2,7 +2,7 @@
 <Project>
   <PropertyGroup>
     <Nullable>enable</Nullable>
-    <NetVersion>net8.0</NetVersion>
+    <NetVersion>net9.0</NetVersion>
     <IsTrimmable>false</IsTrimmable>
     <NuGetAudit>enable</NuGetAudit>
     <MauiVersion>8.0.92</MauiVersion>
