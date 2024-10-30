@@ -126,12 +126,10 @@ public class Task
 						_continuation?.Invoke();
 					else
 					{
-						ExecutionContext.Run(_context, (object? state) => ((Action?)state)?.Invoke(), _continuation);
+						ExecutionContext.Run(_context, state => ((Action?)state)?.Invoke(), _continuation);
 					}
 				});
 			}
-
-			_continuation?.Invoke();
 		}
 	}
 }
