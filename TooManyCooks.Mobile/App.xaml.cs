@@ -1,4 +1,4 @@
-﻿namespace TooManyCooks;
+﻿namespace TooManyCooks.Mobile;
 
 public partial class App : Application
 {

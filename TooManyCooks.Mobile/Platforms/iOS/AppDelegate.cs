@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace TooManyCooks;
+namespace TooManyCooks.Mobile;
 
 [Register(nameof(AppDelegate))]
 public class AppDelegate : MauiUIApplicationDelegate

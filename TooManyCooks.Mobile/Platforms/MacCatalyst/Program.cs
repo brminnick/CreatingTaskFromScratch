@@ -1,7 +1,7 @@
 ﻿using UIKit;
 
-namespace TooManyCooks;
-
+namespace TooManyCooks.Mobile;
+    
 public class Program
 {
     // This is the main entry point of the application.

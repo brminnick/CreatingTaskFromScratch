@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace TooManyCooks;
+namespace TooManyCooks.Mobile;
 
 public static class MauiProgram
 {
