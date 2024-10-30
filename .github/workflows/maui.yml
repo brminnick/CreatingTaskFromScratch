@@ -9,8 +9,42 @@ on:
       - "*"
 
 jobs:
-  Build_Android:
+  Build_Common_Library:
     runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET v9.0
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+          dotnet-quality: 'preview'
+
+      - name: Build Console App
+        run: |
+          dotnet build TooManyCooks.Common/ -c Release
+
+  Build_Console_App:
+    runs-on: windows-latest
+    needs: [Build_Common_Library]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET v9.0
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+          dotnet-quality: 'preview'
+
+      - name: Build Console App
+        run: |
+          dotnet build TooManyCooks.Console/ -c Release          
+
+  Build_Android_App:
+    runs-on: windows-latest
+    needs: [Build_Common_Library]
 
     steps:
       - uses: actions/checkout@v4
@@ -38,8 +72,9 @@ jobs:
         run: |
           dotnet build ./TooManyCooks.Mobile -f net9.0-android -c Release
 
-  Build_iOS:
+  Build_iOS_App:
     runs-on: macos-14
+    needs: [Build_Common_Library]
 
     steps:
       - uses: actions/checkout@v4
@@ -67,8 +102,9 @@ jobs:
         run: |
           dotnet build ./TooManyCooks.Mobile -f net9.0-ios -c Release
           
-  Build_MacCatalyst:
+  Build_MacCatalyst_App:
     runs-on: macos-14
+    needs: [Build_Common_Library]
 
     steps:
       - uses: actions/checkout@v4
@@ -96,8 +132,9 @@ jobs:
         run: |
           dotnet build ./TooManyCooks.Mobile -f net9.0-maccatalyst -c Release
 
-  Build_Windows:
+  Build_Windows_App:
     runs-on: windows-latest
+    needs: [Build_Common_Library]
 
     steps:
       - uses: actions/checkout@v4
