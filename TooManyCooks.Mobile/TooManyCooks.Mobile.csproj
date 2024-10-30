@@ -64,7 +64,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CustomTask\CustomTask.csproj" />
+      <ProjectReference Include="..\TooManyCooks.Common\TooManyCooks.Common.csproj" />
     </ItemGroup>
 
 </Project>
