@@ -1,7 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using TooManyCooks.Common;
 
-Console.WriteLine("Hello, World!");
+IReadOnlyList<Food> dishes =
+[
+	new Turkey(),
+	new MashedPotatoes(),
+	new Stuffing(),
+	new Gravy()
+];
 
-await CustomTask.Task.Delay(TimeSpan.FromSeconds(2));
+Console.WriteLine("Cooking Started");
 
-Console.WriteLine("It Worked!");
+foreach (var food in dishes)
+{
+	await food.Cook();
+	Console.WriteLine($"Finished Cooking {food.Name}");
+}
+
+Console.WriteLine("Ready to eat");
