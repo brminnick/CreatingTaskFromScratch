@@ -1,19 +1,14 @@
 ﻿using TooManyCooks.Common;
 
-IReadOnlyList<Food> dishes =
-[
-	new Turkey(),
-	new MashedPotatoes(),
-	new Stuffing(),
-	new Gravy()
-];
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 
-Console.WriteLine("Cooking Started");
+	var turkey = new Turkey();
+	var gravy = new Gravy();
+	
+	await Task.WhenAll(turkey.Cook(), gravy.Cook());
+	
+	Console.WriteLine("Ready to eat");
 
-foreach (var food in dishes)
-{
-	await food.Cook();
-	Console.WriteLine($"Finished Cooking {food.Name}");
-}
+	Console.ReadLine();
 
-Console.WriteLine("Ready to eat");
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed

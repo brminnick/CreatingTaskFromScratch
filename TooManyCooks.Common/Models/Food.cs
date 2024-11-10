@@ -11,8 +11,13 @@ public abstract class Food
 	}
 	
 	public string Name { get; }
-	
-	public CustomTask.Task Cook() => CustomTask.Task.Delay(_cookTime); 
+
+	public async Task Cook()
+	{
+		Console.WriteLine($"Cooking {Name}");
+		await Task.Delay(_cookTime);
+		Console.WriteLine($"{Name} Completed");
+	}
 }
 
 public class Turkey() : Food(TimeSpan.FromSeconds(10));
