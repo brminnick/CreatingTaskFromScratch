@@ -5,7 +5,7 @@
     <NetVersion>net9.0</NetVersion>
     <IsTrimmable>false</IsTrimmable>
     <NuGetAudit>enable</NuGetAudit>
-    <MauiVersion>8.0.93</MauiVersion>
+    <MauiVersion>9.0.12</MauiVersion>
     <LangVersion>preview</LangVersion>
     <NuGetAuditMode>all</NuGetAuditMode>
     <ImplicitUsings>enable</ImplicitUsings>
